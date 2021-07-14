@@ -27,7 +27,7 @@
                         <hr>
                         <div class="content">
                             <ul>
-                                <li><?= apache_get_version(); ?></li>
+                                <li><?="test"?></li>
                                 <li>PHP <?= phpversion(); ?></li>
                                 <li>
                                     <?php
