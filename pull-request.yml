@@ -1,0 +1,25 @@
+name: Deploy for Testing PR
+
+on:
+  pull_request:
+  push:
+    branches:
+     - master
+
+jobs:
+  build_and_preview:    
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Container setup
+        working-directory: ./docker
+        run: docker-compose up -d
+
+      - name : Container status
+        run: docker ps -a
+
+      - name: PHPUnit Testing
+        working-directory: ./
+        run: docker exec php env TERM=xterm-256color script -q -c "index.php"
