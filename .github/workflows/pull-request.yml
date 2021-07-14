@@ -16,6 +16,10 @@ jobs:
       - name: Container setup
         working-directory: ./
         run: docker-compose up -d
+        
+      - name: Make sure MySQL is running
+        working-directory: ./
+        run: docker exec -u root lamp-database env TERM=xterm-256color script -q -c "service mysql start"
 
       - name : Container status
         run: docker ps -a
