@@ -22,4 +22,4 @@ jobs:
 
       - name: PHPUnit Testing
         working-directory: ./
-        run: docker exec -u root lamp-php8 env TERM=xterm-256color script -q -c "/var/www/html/index.php"
+        run: docker exec -u root lamp-php8 env TERM=xterm-256color script -q -c "php /var/www/html/index.php"
