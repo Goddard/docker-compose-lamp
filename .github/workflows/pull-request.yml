@@ -12,10 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-     
-      - name: Composer Install
-        run: composer install --optimize-autoloader --ignore-platform-reqs
-      - run: composer dump-autoload -o
 
       - name: Container setup
         working-directory: ./docker
