@@ -19,7 +19,7 @@ jobs:
         
       - name: Make sure MySQL is running
         working-directory: ./
-        run: docker exec -u root lamp-database env TERM=xterm-256color script -q -c "service mysql start"
+        run: docker exec -u root lamp-database env TERM=xterm-256color script -q -c "service mysqld start"
 
       - name : Container status
         run: docker ps -a
